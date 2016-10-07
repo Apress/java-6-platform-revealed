@@ -1,0 +1,32 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:Revealed="http://www.jzventures.net"
+    targetNamespace="http://www.jzventures.net"
+>
+
+   <element name="Schedule">
+      <complexType>
+         <sequence>
+            <element name="course" type="Revealed:Course"
+                minOccurs="1" maxOccurs="unbounded"/>
+            <element name="location" type="Revealed:Location"/>
+         </sequence>
+      </complexType>
+   </element>
+
+   <complexType name="Course">
+      <sequence>
+         <element name="courseId" type="string"/>
+         <element name="name" type="string"/>
+         <element name="description" type="string"/>
+      </sequence>
+   </complexType>
+
+   <simpleType name="Location">
+      <restriction base="string">
+         <enumeration value="north"></enumeration>
+         <enumeration value="south"></enumeration>
+         <enumeration value="east"></enumeration>
+         <enumeration value="west"></enumeration>
+      </restriction>
+   </simpleType>
+</schema>
